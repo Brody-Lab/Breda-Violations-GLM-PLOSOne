@@ -1,0 +1,17 @@
+{
+  "analysis_unit": "session",
+  "bonferroni_comparisons": 20,
+  "data_sha256": "947750d40daca77b77f84371d415a1391e3f9ba4910e118abf12b0bfca136c54",
+  "edge_trials": 10,
+  "max_lag": 20,
+  "n_bootstrap": 1000,
+  "n_permutations": 10000,
+  "n_sessions": 5210,
+  "n_trials_excluded": 104200,
+  "random_state": 47,
+  "tested_lags": [
+    1,
+    20
+  ],
+  "workers": 8
+}

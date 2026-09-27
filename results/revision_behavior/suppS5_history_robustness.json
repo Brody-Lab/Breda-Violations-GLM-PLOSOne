@@ -1,0 +1,17 @@
+{
+  "edge_trials_excluded": 10,
+  "full": {
+    "mean_difference_pp": 12.139969121411164,
+    "n_animals": 16,
+    "n_positive": 16,
+    "p_value": 2.1054181040007365e-09,
+    "t": 12.645550986824636
+  },
+  "trimmed": {
+    "mean_difference_pp": 9.863264957542896,
+    "n_animals": 16,
+    "n_positive": 16,
+    "p_value": 1.2819862954993623e-08,
+    "t": 11.075918247080313
+  }
+}

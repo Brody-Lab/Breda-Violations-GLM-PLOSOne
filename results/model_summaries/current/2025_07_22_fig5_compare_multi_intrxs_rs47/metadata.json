@@ -1,0 +1,233 @@
+{
+  "data": {
+    "filename": "all_animals_trained_cleaned.parquet",
+    "sha256": "947750d40daca77b77f84371d415a1391e3f9ba4910e118abf12b0bfca136c54"
+  },
+  "fit_rows": 720,
+  "random_state": 47,
+  "spec": {
+    "models": [
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "base",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_avg_stim",
+            "prev_stim_masked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ]
+        ]
+      },
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "prev_viol_binary",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_avg_stim",
+            "prev_stim_masked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ],
+          [
+            "prev_violation",
+            "prev_violation"
+          ]
+        ]
+      },
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "prev_viol_binary_itrx",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_avg_stim",
+            "prev_stim_masked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ],
+          [
+            "prev_violation",
+            "prev_violation"
+          ],
+          [
+            "sa_x_prev_viol",
+            "sa_binary_interaction"
+          ],
+          [
+            "sb_x_prev_viol",
+            "sb_binary_interaction"
+          ]
+        ]
+      },
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "prev_viol_filtered",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_avg_stim",
+            "prev_stim_masked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ],
+          [
+            "filt_prev_violation",
+            "filt_prev_violation"
+          ]
+        ]
+      },
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "prev_viol_filtered_itrx",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_avg_stim",
+            "prev_stim_masked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ],
+          [
+            "filt_prev_violation",
+            "filt_prev_violation"
+          ],
+          [
+            "sa_x_prev_viol",
+            "sa_filtered_interaction"
+          ],
+          [
+            "sb_x_prev_viol",
+            "sb_filtered_interaction"
+          ]
+        ]
+      }
+    ],
+    "name": "2025_07_22_fig5_compare_multi_intrxs_rs47",
+    "null_mode": "multi",
+    "sigmas": [
+      0.07,
+      0.13,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "taus": []
+  }
+}

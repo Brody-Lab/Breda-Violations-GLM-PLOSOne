@@ -1,0 +1,50 @@
+{
+  "fixation_stage_sessions": {
+    "intercept": 20.670876897765275,
+    "n_animals": 16,
+    "pearson_p": 0.6263115756516453,
+    "pearson_r": -0.13189619507469852,
+    "r2": 0.017396606275182802,
+    "slope": -0.14309488497520145,
+    "spearman_p": 0.6470635235755802,
+    "spearman_r": -0.12408254405851041,
+    "x": "fixation_stage_sessions",
+    "y": "trained_viol_rate"
+  },
+  "fixation_stage_viol_rate": {
+    "intercept": 5.215851613517479,
+    "n_animals": 16,
+    "pearson_p": 0.06030146487691231,
+    "pearson_r": 0.4793102317521691,
+    "r2": 0.22973829826231806,
+    "slope": 0.4255090051997099,
+    "spearman_p": 0.08482274417741585,
+    "spearman_r": 0.4441176470588235,
+    "x": "fixation_stage_viol_rate",
+    "y": "trained_viol_rate"
+  },
+  "sessions_to_trained": {
+    "intercept": 15.098688578932576,
+    "n_animals": 16,
+    "pearson_p": 0.460471998205909,
+    "pearson_r": 0.19878899804907268,
+    "r2": 0.039517065745354185,
+    "slope": 0.010241402129875126,
+    "spearman_p": 0.48129067733031194,
+    "spearman_r": 0.1898455260099464,
+    "x": "sessions_to_trained",
+    "y": "trained_viol_rate"
+  },
+  "trained_hit_rate": {
+    "intercept": 69.71306256903833,
+    "n_animals": 16,
+    "pearson_p": 0.09164420105478031,
+    "pearson_r": -0.43566518897958884,
+    "r2": 0.1898041568886213,
+    "slope": -0.6442377553421755,
+    "spearman_p": 0.09693648522272379,
+    "spearman_r": -0.4294117647058823,
+    "x": "trained_hit_rate",
+    "y": "trained_viol_rate"
+  }
+}

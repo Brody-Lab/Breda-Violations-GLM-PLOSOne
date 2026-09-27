@@ -1,0 +1,52 @@
+{
+  "delay_length": {
+    "reference_delay": 2.0,
+    "slope": {
+      "mean_slope": 1.1048641869803844,
+      "n_animals": 16,
+      "n_positive": 14,
+      "p_value": 9.98590234395707e-05,
+      "t": 5.239827626799973
+    },
+    "versus_reference": {
+      "3": {
+        "mean_difference": 0.225148023412495,
+        "n_animals": 15,
+        "p_value": 0.7876199527989483,
+        "p_value_bonferroni": 1.0,
+        "t": 0.2746188312170755
+      },
+      "4": {
+        "mean_difference": 0.8740772419557054,
+        "n_animals": 15,
+        "p_value": 0.266037186104355,
+        "p_value_bonferroni": 0.798111558313065,
+        "t": 1.1585089464882754
+      },
+      "6": {
+        "mean_difference": 3.7165681856122865,
+        "n_animals": 13,
+        "p_value": 0.0018273709514186906,
+        "p_value_bonferroni": 0.005482112854256072,
+        "t": 3.9796708778128638
+      }
+    }
+  },
+  "relative_delay": {
+    "delay_matched": {
+      "mean_difference": 0.14917785904833453,
+      "n_animals": 16,
+      "p_value": 0.5121505068467234,
+      "t": 0.6714373271372024
+    },
+    "unmatched": {
+      "mean_delay_longer": 4.552078574853269,
+      "mean_delay_same_or_shorter": 3.0505303354082756,
+      "mean_longer": 17.986893440840184,
+      "mean_same_or_shorter": 16.670052824937045,
+      "n_animals": 16,
+      "p_value": 0.0004714614506349493,
+      "t": 4.446002797585117
+    }
+  }
+}

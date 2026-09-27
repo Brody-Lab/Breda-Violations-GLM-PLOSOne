@@ -1,0 +1,122 @@
+{
+  "bytes": 75101,
+  "experiment_class": "violmulti.experiments.experiment_compare_models.ExperimentCompareModels",
+  "figure": "fig03",
+  "filename": "2025_07_19_fig3_compare_prev_viol_rs47.pkl.gz",
+  "fit_columns": [
+    "animal_id",
+    "model_name",
+    "model_type",
+    "nll",
+    "train_nll",
+    "sigma",
+    "features",
+    "weights",
+    "n_train_trials",
+    "n_test_trials"
+  ],
+  "fit_rows": 432,
+  "params": {
+    "animals": [
+      "W051",
+      "W060",
+      "W065",
+      "W066",
+      "W068",
+      "W072",
+      "W073",
+      "W074",
+      "W075",
+      "W078",
+      "W080",
+      "W081",
+      "W083",
+      "W088",
+      "W089",
+      "W094"
+    ],
+    "data_type": "new_trained_cleaned",
+    "eval_train": true,
+    "model_config": {
+      "base": {
+        "dmg_config": {
+          "bias": "__main__.<lambda>",
+          "labels": {
+            "column_name": "choice",
+            "mapping": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            }
+          },
+          "prev_avg_stim": "__main__.<lambda>",
+          "prev_choice": "__main__.<lambda>",
+          "prev_correct": "__main__.<lambda>",
+          "s_a": "__main__.<lambda>",
+          "s_b": "__main__.<lambda>",
+          "session": "__main__.<lambda>"
+        },
+        "model_class": "violmulti.models.multiclass_logistic_regression.MultiClassLogisticRegression"
+      },
+      "prev_viol_binary": {
+        "dmg_config": {
+          "bias": "__main__.<lambda>",
+          "labels": {
+            "column_name": "choice",
+            "mapping": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            }
+          },
+          "prev_avg_stim": "__main__.<lambda>",
+          "prev_choice": "__main__.<lambda>",
+          "prev_correct": "__main__.<lambda>",
+          "prev_violation": "__main__.<lambda>",
+          "s_a": "__main__.<lambda>",
+          "s_b": "__main__.<lambda>",
+          "session": "__main__.<lambda>"
+        },
+        "model_class": "violmulti.models.multiclass_logistic_regression.MultiClassLogisticRegression"
+      },
+      "prev_viol_filtered": {
+        "dmg_config": {
+          "bias": "__main__.<lambda>",
+          "filt_prev_violation": "__main__.<lambda>",
+          "labels": {
+            "column_name": "choice",
+            "mapping": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            }
+          },
+          "prev_avg_stim": "__main__.<lambda>",
+          "prev_choice": "__main__.<lambda>",
+          "prev_correct": "__main__.<lambda>",
+          "s_a": "__main__.<lambda>",
+          "s_b": "__main__.<lambda>",
+          "session": "__main__.<lambda>"
+        },
+        "model_class": "violmulti.models.multiclass_logistic_regression.MultiClassLogisticRegression"
+      }
+    },
+    "null_mode": "multi",
+    "random_state": 47,
+    "sigmas": [
+      0.07,
+      0.13,
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16
+    ]
+  },
+  "random_state": 47,
+  "sha256": "2842982a848cd5ba6190a614ad8ebcb18f3e98b28e200f6b5b5ec552c551e059",
+  "source_commit": "8358b9f",
+  "test_size": 0.2
+}

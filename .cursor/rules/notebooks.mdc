@@ -43,6 +43,7 @@ abstractions.
 - Keep panel-specific layout, labels, reference lines, and narrative comments
   in the notebook; keep aggregation and stats in the package.
 - Use `save_figure` with stems such as `fig03a_violation_autocorrelation`.
+- Do not call `plt.close()`; let figures display inline.
 - Avoid function definitions unless under five lines and used once.
 - Remove scratch/debug cells (`foo?`, exploratory plots) and clear outputs
   before committing.

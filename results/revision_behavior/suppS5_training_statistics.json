@@ -1,0 +1,16 @@
+{
+  "early_violation_rate": {
+    "n_animals": 16,
+    "pearson_p": 0.16668414606677293,
+    "pearson_r": 0.3632533472854623,
+    "spearman_p": 0.2084998279822084,
+    "spearman_r": 0.3323529411764706
+  },
+  "first_stage_four_session": {
+    "n_animals": 16,
+    "pearson_p": 0.24361633799695617,
+    "pearson_r": -0.3093731440546095,
+    "spearman_p": 0.26950944788794545,
+    "spearman_r": -0.2937289370374649
+  }
+}

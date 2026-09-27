@@ -1,0 +1,107 @@
+{
+  "bytes": 471934,
+  "experiment_class": "violmulti.experiments.experiment_tau_sweep.ExperimentTauSweep",
+  "figure": "fig03",
+  "filename": "2025_07_19_fig3_sweep_prev_viol_taus_rs47.pkl.gz",
+  "fit_columns": [
+    "animal_id",
+    "model_name",
+    "model_type",
+    "nll",
+    "train_nll",
+    "sigma",
+    "features",
+    "weights",
+    "n_train_trials",
+    "n_test_trials",
+    "tau"
+  ],
+  "fit_rows": 2736,
+  "params": {
+    "animals": [
+      "W051",
+      "W060",
+      "W065",
+      "W066",
+      "W068",
+      "W072",
+      "W073",
+      "W074",
+      "W075",
+      "W078",
+      "W080",
+      "W081",
+      "W083",
+      "W088",
+      "W089",
+      "W094"
+    ],
+    "data_type": "new_trained_cleaned",
+    "eval_train": true,
+    "model_config": {
+      "tau_sweep_prev_filt_violation": {
+        "dmg_config": {
+          "bias": "__main__.<lambda>",
+          "labels": {
+            "column_name": "choice",
+            "mapping": {
+              "0": 0,
+              "1": 1,
+              "2": 2
+            }
+          },
+          "prev_choice": "__main__.<lambda>",
+          "prev_correct": "__main__.<lambda>",
+          "prev_stim_avg": "__main__.<lambda>",
+          "s_a": "__main__.<lambda>",
+          "s_b": "__main__.<lambda>",
+          "session": "__main__.<lambda>",
+          "tau_sweep": {
+            "col_func": "__main__.<lambda>",
+            "col_name": "filt_prev_violation",
+            "current_idx": 18,
+            "taus": [
+              0.51,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              12,
+              15,
+              20,
+              25,
+              30,
+              40,
+              50,
+              100
+            ]
+          }
+        },
+        "model_class": "violmulti.models.multiclass_logistic_regression.MultiClassLogisticRegression"
+      }
+    },
+    "random_state": 47,
+    "sigmas": [
+      0.07,
+      0.13,
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tau_sweep": true
+  },
+  "random_state": 47,
+  "sha256": "be68315828f505e659fa5150c2d694a2bff5ef1526b50b280636073f173c3f8b",
+  "source_commit": "8358b9f",
+  "test_size": 0.2
+}

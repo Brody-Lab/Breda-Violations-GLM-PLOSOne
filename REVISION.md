@@ -44,6 +44,18 @@ the manuscript changes they support.
 - [ ] Decide whether earlier training-stage and delay-length analyses belong in
       S5 or remain discussion-only. The current S5 includes early-training
       and time-to-stage-4 panels (C–D); delay-length is not implemented.
+- [ ] Finalize the draft `suppS5.ipynb` (univariate predictors of trained
+      violation rate; no panels saved yet). It keeps the submitted
+      hit/violation MixedLM (β = −0.342) and animal-mean OLS (R² = 0.190) and
+      adds animal-level (N = 16) associations with stage 1 violation rate
+      (r = 0.48, p = 0.060), sessions in stage 1 (r = −0.13, p = 0.63), and
+      sessions to trained (r = 0.20, p = 0.46). Session position replaces the
+      scratchpad's first/middle/last-50 windows: excluding the first and last
+      10 trials, violations rise 0.35 pp per 10% of the session (13 of 16
+      rats, p = 0.0003; 16.3% to 18.5%), and edge-aligned trials show the
+      start spike (95% on trial 1) and end ramp (54% on the final trial, with
+      hit rate falling to 56%). The stages 1–3 / first-stage-4 panels remain
+      only in the scratchpad.
 
 ## Figure 3
 
@@ -53,6 +65,12 @@ the manuscript changes they support.
 - [ ] Update panel 3a, its caption, Methods, and Results from the same output.
       After Bonferroni correction over lags 1–20, 18 lags remain significant;
       lags 18 and 20 do not.
+- [x] Session-edge robustness for Figure 3 autocorrelation: after dropping the
+      first and last 10 trials of each session, Bonferroni-significant positive
+      autocorrelation remains at lags 1–5 (lag-1 observed 0.117 → 0.078).
+      Model-free post-violation effect remains positive in all 16 animals
+      (12.1 → 9.9 pp; both p < 1e-7). Submitted Fig 3–5 GLM fits unchanged.
+      Artifacts: `fig03_autocorrelation_edges_trimmed/`, `suppS5_history_robustness.json`.
 - [x] Refit and regression-test all Figure 3 GLMs against submitted artifacts.
       All four current summaries match (held-out NLL difference < 2.3e-4;
       weights < 2.4e-6). The tau sweep is the largest residual.

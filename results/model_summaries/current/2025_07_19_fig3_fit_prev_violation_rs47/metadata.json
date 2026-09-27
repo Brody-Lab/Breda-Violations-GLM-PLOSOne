@@ -1,0 +1,65 @@
+{
+  "data": {
+    "filename": "all_animals_trained_cleaned.parquet",
+    "sha256": "947750d40daca77b77f84371d415a1391e3f9ba4910e118abf12b0bfca136c54"
+  },
+  "fit_rows": 144,
+  "random_state": 47,
+  "spec": {
+    "models": [
+      {
+        "lr_only_eval": false,
+        "model_type": "multi",
+        "name": "prev_violation",
+        "operations": [
+          [
+            "session",
+            "session"
+          ],
+          [
+            "bias",
+            "bias"
+          ],
+          [
+            "s_a",
+            "s_a"
+          ],
+          [
+            "s_b",
+            "s_b"
+          ],
+          [
+            "prev_violation",
+            "prev_violation"
+          ],
+          [
+            "prev_stim_avg",
+            "prev_stim_unmasked"
+          ],
+          [
+            "prev_correct",
+            "prev_correct"
+          ],
+          [
+            "prev_choice",
+            "prev_choice"
+          ]
+        ]
+      }
+    ],
+    "name": "2025_07_19_fig3_fit_prev_violation_rs47",
+    "null_mode": null,
+    "sigmas": [
+      0.07,
+      0.13,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "taus": []
+  }
+}
