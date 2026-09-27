@@ -1,0 +1,20 @@
+---
+description: Publication data preparation and provenance conventions
+globs: "{src/violations_glm/io.py,src/violations_glm/preprocessing.py,scripts/prepare_data.py,data/**/*.json}"
+alwaysApply: false
+---
+
+# Data pipeline
+
+- Treat raw inputs as immutable and verify their checksums before processing.
+- Make each cleaning, alignment, thresholding, and final-filter stage explicit.
+- Record rows, sessions, animals, columns, checksum, producer, and source
+  artifact for every stage.
+- Validate required columns, uniqueness assumptions, category values, and
+  animal membership at load boundaries.
+- Restrict committed processed data to publication inputs and figure summaries.
+- Keep side analyses out of `data/processed/`.
+- Use Parquet for typed trial-level data and JSON for manifests.
+- Never silently drop rows. Every filtering stage must report its counts.
+- Resolve paths through `violations_glm.paths` and allow
+  `VIOLATIONS_GLM_DATA_DIR` for external Zenodo data.

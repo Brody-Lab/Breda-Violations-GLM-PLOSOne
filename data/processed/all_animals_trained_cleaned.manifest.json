@@ -1,0 +1,46 @@
+{
+  "filters": {
+    "animals": "16-animal submitted modeling cohort",
+    "maximum_violation_rate": 0.99,
+    "minimum_trials_per_session": 50,
+    "require_nonmissing_hit_and_violation_rates": true
+  },
+  "input": {
+    "path": "all_animals_cleaned.parquet",
+    "sha256": "e9c36a1ae9f7fb6efe9921b806b5af56236f6946c9c927f851df26f03f31e9cb"
+  },
+  "output": {
+    "animals": 16,
+    "logical_sha256": "151f0dc0b958dd104343d1b56ac54ebc3b083bebe9acd710e4ce124d6e60cf9a",
+    "path": "all_animals_trained_cleaned.parquet",
+    "rows": 1866003,
+    "sessions": 5210,
+    "sha256": "947750d40daca77b77f84371d415a1391e3f9ba4910e118abf12b0bfca136c54"
+  },
+  "producer": "scripts/prepare_full_pipeline.py",
+  "reference": {
+    "animals": 16,
+    "logical_sha256": "151f0dc0b958dd104343d1b56ac54ebc3b083bebe9acd710e4ce124d6e60cf9a",
+    "path": "all_animals_trained_threshold_cleaned.parquet",
+    "rows": 1866003,
+    "sessions": 5210,
+    "sha256": "244e213b827fad294ae2defc26ec976290fa20bb3172631d899a96be00634028"
+  },
+  "stages": {
+    "input": {
+      "animals": 16,
+      "rows": 1867005,
+      "sessions": 5251
+    },
+    "publication_animals": {
+      "animals": 16,
+      "rows": 1867005,
+      "sessions": 5251
+    },
+    "session_quality_filter": {
+      "animals": 16,
+      "rows": 1866003,
+      "sessions": 5210
+    }
+  }
+}

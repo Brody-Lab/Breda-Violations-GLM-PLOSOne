@@ -1,0 +1,14 @@
+{
+  "input": {
+    "filename": "all_animals_cleaned.csv",
+    "sha256": "af560e254e81082de803316e8ea16d76d15b2feb9ff953ee9fa2f59207595719"
+  },
+  "output": {
+    "animals": 17,
+    "filename": "all_animals_cleaned.parquet",
+    "rows": 3034200,
+    "sessions": 9952,
+    "sha256": "e9c36a1ae9f7fb6efe9921b806b5af56236f6946c9c927f851df26f03f31e9cb"
+  },
+  "producer": "scripts/prepare_all_trials.py"
+}

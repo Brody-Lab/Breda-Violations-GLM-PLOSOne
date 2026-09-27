@@ -1,0 +1,39 @@
+source:
+  repository: Brody-Lab/violations-multinomial
+  commit: 8358b9f
+  directory: notebooks/publication/data/model_fits
+  trusted: true
+
+artifacts:
+  - figure: fig03
+    filename: 2025_07_19_fig3_compare_prev_viol_rs47.pkl.gz
+    bytes: 75101
+    sha256: 2842982a848cd5ba6190a614ad8ebcb18f3e98b28e200f6b5b5ec552c551e059
+  - figure: fig03
+    filename: 2025_07_19_fig3_fit_filt_prev_violation_rs47.pkl.gz
+    bytes: 27452
+    sha256: 9dd14bd96db37c659558bf7359bae12b84d2232623f476d20342e40fd504bbcb
+  - figure: fig03
+    filename: 2025_07_19_fig3_fit_prev_violation_rs47.pkl.gz
+    bytes: 27107
+    sha256: 06b3922e75dc8c038e9f7860124e6fecf424246a74b3b68106f5239e990d556e
+  - figure: fig03
+    filename: 2025_07_19_fig3_sweep_prev_viol_taus_rs47.pkl.gz
+    bytes: 471934
+    sha256: be68315828f505e659fa5150c2d694a2bff5ef1526b50b280636073f173c3f8b
+  - figure: fig04
+    filename: 2025_07_22_fig4_fit_binary_prev_viol_stim_intrx_n_rs47.pkl.gz
+    bytes: 33819
+    sha256: 3ee28ad6d1a275747d8f935fa9a303fa2b7d8cb4ee9d1761c43e813fd06f983f
+  - figure: fig04
+    filename: 2025_07_22_fig4_fit_filtered_prev_viol_stim_intrx_n_rs47.pkl.gz
+    bytes: 34214
+    sha256: f9ba41571e12d5bca52497b897bfa669de82517b6a621bd027b45418849a7f9d
+  - figure: fig05
+    filename: 2025_07_22_fig5_compare_multi_intrxs_rs47.pkl.gz
+    bytes: 138460
+    sha256: 66151e08ae88cae321b922737261ca355d5490c3e6624c1b2ab12ce1cd9ca26a
+  - figure: fig05
+    filename: 2025_07_22_fig5_compare_to_binary_rs47.pkl.gz
+    bytes: 126631
+    sha256: 3781c08bf6f04c64748a0cfa1327598977d404652c009eef856681ac49178a85

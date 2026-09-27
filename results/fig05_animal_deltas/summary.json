@@ -1,0 +1,11 @@
+{
+  "artifact": "2025_07_22_fig5_compare_to_binary_rs47",
+  "max_animal": "W074",
+  "max_delta": 0.00488545525434847,
+  "mean_delta": 0.0005021396164147929,
+  "min_animal": "W065",
+  "min_delta": -0.005279401008899232,
+  "model_name": "prev_viol_filtered_itrx",
+  "n_animals": 16,
+  "n_improved": 12
+}

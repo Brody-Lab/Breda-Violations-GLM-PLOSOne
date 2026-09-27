@@ -1,0 +1,39 @@
+{
+  "all_trials": {
+    "animals": 17,
+    "rows": 3034200,
+    "sessions": 9952
+  },
+  "model_cohort_trials": {
+    "animals": 16,
+    "rows": 2711970,
+    "sessions": 9240
+  },
+  "modeling": {
+    "animals": 16,
+    "rows": 1866003,
+    "sessions": 5210
+  },
+  "session_quality_stages": {
+    "input": {
+      "animals": 16,
+      "rows": 1867005,
+      "sessions": 5251
+    },
+    "publication_animals": {
+      "animals": 16,
+      "rows": 1867005,
+      "sessions": 5251
+    },
+    "session_quality_filter": {
+      "animals": 16,
+      "rows": 1866003,
+      "sessions": 5210
+    }
+  },
+  "trained_threshold": {
+    "animals": 16,
+    "rows": 1867005,
+    "sessions": 5251
+  }
+}

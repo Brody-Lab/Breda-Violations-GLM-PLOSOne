@@ -1,0 +1,22 @@
+---
+description: Deterministic publication model-fitting conventions
+globs: "{src/violations_glm/fitting/**/*.py,scripts/fit_*.py,configs/**/*.yml,configs/**/*.yaml}"
+alwaysApply: false
+---
+
+# Model fitting
+
+- Every publication fit is driven by a committed configuration.
+- Record the data checksum, animal IDs, feature order, parameter grids,
+  optimizer settings, random seed, split identities, package version, and
+  output paths.
+- Preserve submitted behavior before refactoring it, including optimizer
+  initialization and feature ordering.
+- Each fit supports a one-animal smoke mode and a full publication mode.
+- Write stable Parquet/JSON summaries; never make notebooks depend on `dill`.
+- Refuse to overwrite an existing artifact with different provenance unless
+  the caller explicitly requests replacement.
+- Compare regenerated outputs with the committed golden summaries.
+- Use exact checks for categorical/provenance values and documented numerical
+  tolerances for floating-point values.
+- Full model sweeps are release checks, not routine CI tests.

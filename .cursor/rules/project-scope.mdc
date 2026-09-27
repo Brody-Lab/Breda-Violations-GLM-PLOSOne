@@ -1,0 +1,21 @@
+---
+description: Publication repository scope and reproducibility requirements
+alwaysApply: true
+---
+
+# Project scope
+
+- This repository is the source of truth for the PLOS ONE publication.
+- Include only analyses, data, and models used by the manuscript or revision.
+- Exclude Dynamax, SSM, GLM-HMM, cluster experiments, thesis drafts, and side
+  analyses unless the user explicitly expands the publication scope.
+- Use **binary GLM** and **multinomial GLM** consistently.
+- Use repository-relative `pathlib.Path` paths through
+  `violations_glm.paths`; never add user-specific absolute paths.
+- Preserve random seed 47 where it defines submitted model results.
+- Figure notebooks consume named loaders and stable tabular summaries, not
+  trusted pickle objects.
+- Put reusable logic in `src/violations_glm/`; keep scripts thin and notebooks
+  focused on panel assembly and narrative.
+- Record changes that affect reported values in `REVISION.md` and migration
+  status in `MIGRATION.md`.

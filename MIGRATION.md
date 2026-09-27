@@ -1,0 +1,48 @@
+# Publication migration
+
+This checklist records the reproducibility state of each deliverable. A figure
+is complete only when its inputs are documented, its notebook runs top to
+bottom, and its panel values have been compared with the submitted composite.
+
+## Foundation
+
+- [x] Establish the uv/src-layout project structure.
+- [x] Define repository-relative data, results, and figure paths.
+- [x] Lock and verify the Python environment.
+- [x] Build the publication-data manifest with checksums and filtering counts.
+- [x] Export stable golden summaries from all eight submitted model-fit objects.
+- [x] Add fast tests and the full model-regression command.
+
+## Main figures
+
+- [x] Figure 1 — dataset overview; panels B–E match submitted session histograms
+      and choice distribution; hit–violation block moved to S5
+- [x] Figure 2 — binary and multinomial GLM schematics
+- [x] Figure 3 — violation history, corrected autocorrelation, and model fits
+- [x] Figure 4 — post-violation performance and psychometric simulations
+- [x] Figure 5 — model comparisons
+
+## Supporting figures
+
+- [x] S1 — dataset alignment
+- [x] S2 — stimulus pairs by animal
+- [x] S3 — trained-session threshold
+- [x] S4 — exponential-filter schematic
+- [x] S5 — hit–violation regressions (Panel A), session-position violations,
+      and early-training context
+
+## Model-fit baselines
+
+The submitted fit objects are tracked in historical commit `8358b9f` under
+`notebooks/publication/data/model_fits/`. The canonical set contains four
+Figure 3 objects, two Figure 4 objects, and two Figure 5 objects. The unused
+`2025_07_22_fig4_compare_intrxs_rs47.pkl` reference is not a migration input.
+
+Each baseline export must record:
+
+- source commit and SHA-256 checksum;
+- data checksum and animal IDs;
+- feature order and model parameters;
+- train/test session identities and seed;
+- tau/sigma grids and selected values;
+- weights, NLLs, trial counts, and figure-ready summary values.

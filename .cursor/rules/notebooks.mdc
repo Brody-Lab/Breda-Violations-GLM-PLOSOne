@@ -1,0 +1,55 @@
+---
+description: Conventions for publication figure notebooks
+globs: notebooks/**/*.ipynb
+alwaysApply: false
+---
+
+# Figure notebooks
+
+## Purpose
+
+Someone should be able to clone this repo, run a notebook top to bottom, and
+recreate the published panel. Prefer simple, readable panel code over clever
+abstractions.
+
+## Fidelity
+
+- Match the submitted / original publication plots unless the user directs a
+  change. Assume the prior analysis and styling were correct; do not
+  “improve” plot type, aggregation, colors, limits, or labels on your own.
+- If the destination already has panel letters but wrong visuals (e.g. bars
+  instead of the original histograms), treat that as incomplete migration, not
+  an intentional redesign.
+- Keep reported statistics identical to the source analysis unless a specific
+  error is identified and confirmed.
+
+## Structure
+
+- Name main figures `figNN.ipynb` and supplements `suppSN.ipynb`.
+- Start with: manuscript figure heading, full-composite image, code heading,
+  one-sentence goal, panel/input map, and explicit output filenames.
+- Follow with an imports-only cell and an optional shared-settings cell.
+- Put shared RC / `sns.set_context` once in imports or the settings cell—never
+  wrap every panel in the same `with sns.plotting_context(...)`.
+- Use one markdown heading plus one code cell per panel.
+- Import loaders, transforms, statistics, and shared plots from
+  `violations_glm`; do not manipulate `sys.path`.
+- Do not fit models in notebooks. Load stable summaries produced by scripts.
+- Do not read files with bare relative strings. Use named package loaders.
+- Keep panel-specific layout, labels, reference lines, and narrative comments
+  in the notebook; keep aggregation and stats in the package.
+- Use `save_figure` with stems such as `fig03a_violation_autocorrelation`.
+- Avoid function definitions unless under five lines and used once.
+- Remove scratch/debug cells (`foo?`, exploratory plots) and clear outputs
+  before committing.
+- Notebooks must execute top to bottom in a fresh kernel. After editing
+  package exports (`config`, loaders, transforms), restart the kernel before
+  re-running imports.
+
+## Panel moves and verification
+
+- When moving a panel between figures/supplements, renumber letters and
+  `save_figure` stems together and update `scripts/verify_cached.py` in the
+  same change.
+- Record value-affecting or placement changes in `REVISION.md` and migration
+  status in `MIGRATION.md`.

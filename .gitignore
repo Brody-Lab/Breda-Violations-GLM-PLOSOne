@@ -216,3 +216,18 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Publication artifacts
+data/raw/*
+data/processed/*.parquet
+data/model_fits/*
+results/data_preparation/candidate/
+results/fig03_autocorrelation_smoke/
+results/model_summaries/smoke/
+
+# Keep manifests and directory documentation
+!data/raw/.gitkeep
+!data/raw/README.md
+!data/processed/*.manifest.json
+!data/model_fits/.gitkeep
+!data/model_fits/README.md
