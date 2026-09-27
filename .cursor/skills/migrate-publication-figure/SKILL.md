@@ -41,6 +41,8 @@ disable-model-invocation: true
 5. **Build the notebook** following `.cursor/rules/notebooks.mdc`:
    - One markdown + one code cell per panel.
    - Shared `sns.set_context` / RC once in imports or settings.
+   - Call `configure_publication_dpi()` in imports so display and saves are
+     300 DPI (`save_figure` defaults to `FIGURE_DPI = 300`).
    - Active `save_figure` stems matching the overview and `verify_cached.py`.
    - No model fitting in the notebook; print loaded summaries.
 6. **Verify** — Execute top to bottom (fresh kernel after package edits).

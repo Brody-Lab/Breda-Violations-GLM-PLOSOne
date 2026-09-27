@@ -31,6 +31,10 @@ abstractions.
 - Follow with an imports-only cell and an optional shared-settings cell.
 - Put shared RC / `sns.set_context` once in imports or the settings cell—never
   wrap every panel in the same `with sns.plotting_context(...)`.
+- **DPI 300 for all figures.** In the imports cell call
+  `configure_publication_dpi()` (from `violations_glm.plotting`). Do not set a
+  different `dpi=` on `plt.subplots` / `Figure` unless matching 300. Saved PNGs
+  go through `save_figure`, which defaults to `FIGURE_DPI = 300`.
 - Use one markdown heading plus one code cell per panel.
 - Import loaders, transforms, statistics, and shared plots from
   `violations_glm`; do not manipulate `sys.path`.
