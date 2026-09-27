@@ -15,8 +15,9 @@ bottom, and its panel values have been compared with the submitted composite.
 
 ## Main figures
 
-- [x] Figure 1 — dataset overview; panels B–E match submitted session histograms
-      and choice distribution; hit–violation block moved to S5
+- [x] Figure 1 — notebook panels B–F done (sequences B; C–F histograms/choice;
+      choice E, violation F); hit–violation block in S5. Panel A task timing
+      still to be added in Affinity Designer before Overleaf upload.
 - [x] Figure 2 — binary and multinomial GLM schematics
 - [x] Figure 3 — violation history, corrected autocorrelation, and model fits
 - [x] Figure 4 — post-violation performance and psychometric simulations

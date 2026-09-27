@@ -6,16 +6,41 @@ the manuscript changes they support.
 
 ## Figure 1 and Supporting Figure S5
 
-- [x] Add task timing to Figure 1a.
-- [ ] Finalize revised Figure 1 panel placement.
+### Code / notebook (done)
+
+- [x] Finalize revised Figure 1 panel placement: example sequences are Panel B;
+      session histograms and choice distribution are Panels C–F (shifted one
+      letter from the submitted B–E layout; choice is E, violation rate is F).
 - [x] Restore submitted session histograms and choice distribution as
-      Figure 1 panels B–E (identical to the original publication notebook).
+      Figure 1 panels C–F (identical visuals to the original publication
+      notebook panels B–E).
 - [x] Move hit-versus-violation scatters and MixedLM/OLS/sklearn diagnostics
       from the original Figure 1F block into Supporting Figure S5 Panel A
       (both session+animal and animal+regression figures retained).
-- [x] Plot representative raw behavioral sequences.
+- [x] Plot representative raw behavioral sequences as Figure 1 Panel B
+      (`fig01b_example_sequences`; DPI 300 via `configure_publication_dpi`).
 - [x] Plot violation rate by trial position within sessions (now S5 Panel B).
 - [x] Add S5 to the Results with Figure 1; retain S1–S4 numbering.
+
+### Manuscript text (done)
+
+- [x] Update the Figure 1 panel legend / in-text figure description for the
+      revised B–F layout.
+- [x] Update the Results section for the revised Figure 1 (and S5 linkage).
+
+### Design / Overleaf (remaining)
+
+- [ ] Add task-event timing to Figure 1a in Affinity Designer (not coded;
+      composite `figures/fig01_FULL.png`). Panel A is the only outstanding
+      visual before the figure is final.
+- [ ] Address the Revision 1 comments that requested the Figure 1 changes
+      (task timing, raw sequences, panel reordering / S5 move) in the
+      response-to-reviewers text.
+- [ ] Once Panel A is complete, export the full Figure 1 composite and upload
+      it to the Overleaf manuscript project.
+
+### Open analysis decision
+
 - [ ] Decide whether earlier training-stage and delay-length analyses belong in
       S5 or remain discussion-only. The current S5 includes early-training
       and time-to-stage-4 panels (C–D); delay-length is not implemented.
