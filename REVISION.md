@@ -14,12 +14,11 @@ the manuscript changes they support.
 - [x] Restore submitted session histograms and choice distribution as
       Figure 1 panels C–F (identical visuals to the original publication
       notebook panels B–E).
-- [x] Move hit-versus-violation scatters and MixedLM/OLS/sklearn diagnostics
-      from the original Figure 1F block into Supporting Figure S5 Panel A
-      (both session+animal and animal+regression figures retained).
+- [x] Move hit-versus-violation scatter and MixedLM into Figure 1 Panel G
+      (session points + animal means; across-animal OLS not reported in text).
 - [x] Plot representative raw behavioral sequences as Figure 1 Panel B
       (`fig01b_example_sequences`; DPI 300 via `configure_publication_dpi`).
-- [x] Plot violation rate by trial position within sessions (now S5 Panel B).
+- [x] Plot violation rate by trial position within sessions (S5 panels d–f).
 - [x] Add S5 to the Results with Figure 1; retain S1–S4 numbering.
 
 ### Manuscript text (done)
@@ -39,23 +38,17 @@ the manuscript changes they support.
 - [ ] Once Panel A is complete, export the full Figure 1 composite and upload
       it to the Overleaf manuscript project.
 
-### Open analysis decision
+### S5 scope (resolved)
 
-- [ ] Decide whether earlier training-stage and delay-length analyses belong in
-      S5 or remain discussion-only. The current S5 includes early-training
-      and time-to-stage-4 panels (C–D); delay-length is not implemented.
-- [ ] Finalize the draft `suppS5.ipynb` (univariate predictors of trained
-      violation rate; no panels saved yet). It keeps the submitted
-      hit/violation MixedLM (β = −0.342) and animal-mean OLS (R² = 0.190) and
-      adds animal-level (N = 16) associations with stage 1 violation rate
-      (r = 0.48, p = 0.060), sessions in stage 1 (r = −0.13, p = 0.63), and
-      sessions to trained (r = 0.20, p = 0.46). Session position replaces the
-      scratchpad's first/middle/last-50 windows: excluding the first and last
-      10 trials, violations rise 0.35 pp per 10% of the session (13 of 16
-      rats, p = 0.0003; 16.3% to 18.5%), and edge-aligned trials show the
-      start spike (95% on trial 1) and end ramp (54% on the final trial, with
-      hit rate falling to 56%). The stages 1–3 / first-stage-4 panels remain
-      only in the scratchpad.
+- [x] S5 panels a–c: training-history univariate scatters (fixation-stage
+      violation rate r = 0.48, p = 0.06; sessions in stage 1 and sessions to
+      trained n.s.).
+- [x] S5 panels d–g: session progress (trimmed bins), start/end edges, and
+      full vs. edge-trimmed autocorrelation overlay.
+- [x] Delay-length and relative-delay analyses dropped from the paper (letter
+      only for R3 #24). Hit-vs-violation moved to Fig 1g.
+- [x] Finalize `suppS5.ipynb` with `save_figure` stems and `verify_cached.py`
+      expectations.
 
 ## Figure 3
 

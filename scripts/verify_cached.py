@@ -29,9 +29,9 @@ OUTPUTS = {
         "fig01a_task_timing.png",
         "fig01b_example_sequences.png",
         "fig01c_trials_per_session.png",
-        "fig01d_hit_rate.png",
+        "fig01d_session_rates.png",
         "fig01e_choice_percentages.png",
-        "fig01f_violation_rate.png",
+        "fig01f_violation_by_hit_rate.png",
     },
     "fig02.ipynb": {
         "fig02a_binary_weights.png",
@@ -72,7 +72,15 @@ OUTPUTS = {
         "suppS4a_exponential_kernel.png",
         "suppS4b_filtered_sequence.png",
     },
-    "suppS5.ipynb": set(),
+    "suppS5.ipynb": {
+        "suppS5a_fixation_stage_violations.png",
+        "suppS5b_time_in_fixation_stage.png",
+        "suppS5c_time_to_trained.png",
+        "suppS5d_session_progress.png",
+        "suppS5e_session_start.png",
+        "suppS5f_session_end.png",
+        "suppS5g_autocorrelation_robustness.png",
+    },
 }
 
 
