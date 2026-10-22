@@ -38,17 +38,25 @@ the manuscript changes they support.
 - [ ] Once Panel A is complete, export the full Figure 1 composite and upload
       it to the Overleaf manuscript project.
 
-### S5 scope (resolved)
+### Supplement scope (resolved)
 
+- [x] Split the original seven-panel S5 into two supplements so each one is
+      cited from a single main figure: **S5** (training history, cited with
+      Figure 1) and **S6** (within-session structure, cited with Figure 3).
 - [x] S5 panels a–c: training-history univariate scatters (fixation-stage
       violation rate r = 0.48, p = 0.06; sessions in stage 1 and sessions to
-      trained n.s.).
-- [x] S5 panels d–g: session progress (trimmed bins), start/end edges, and
-      full vs. edge-trimmed autocorrelation overlay.
+      trained n.s.). Addresses R1 #20.
+- [x] S6 panels a–d: session progress (10 bins, all trials), start/end edge
+      alignment, and the full vs. edge-trimmed autocorrelation overlay.
+      Addresses R3 #25.
 - [x] Delay-length and relative-delay analyses dropped from the paper (letter
-      only for R3 #24). Hit-vs-violation moved to Fig 1g.
-- [x] Finalize `suppS5.ipynb` with `save_figure` stems and `verify_cached.py`
-      expectations.
+      only for R3 #24). Hit-vs-violation moved into Figure 1 (now panel f
+      after the hit/violation histograms merged into panel d).
+- [x] Finalize `suppS5.ipynb` and `suppS6.ipynb` with `save_figure` stems and
+      `verify_cached.py` expectations.
+- [ ] Cached artifacts in `results/revision_behavior/` keep their original
+      `suppS5_*` prefixes even where they now feed S6 panels; the loaders in
+      `io.py` are named by content, so this is cosmetic only.
 
 ## Figure 3
 

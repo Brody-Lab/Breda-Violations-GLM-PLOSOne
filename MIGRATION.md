@@ -29,7 +29,10 @@ bottom, and its panel values have been compared with the submitted composite.
 - [x] S2 — stimulus pairs by animal
 - [x] S3 — trained-session threshold
 - [x] S4 — exponential-filter schematic
-- [ ] S5 — draft `suppS5.ipynb`: hit–violation regressions plus stage 1
+- [x] S5 / S6 — `suppS5.ipynb` (training history, cited with Fig 1) and
+      `suppS6.ipynb` (within-session structure, cited with Fig 3). The
+      hit–violation regression moved into Figure 1.
+- [ ] S5 — superseded note: original single-notebook draft held stage 1
       violation rate, time in stage 1, and time to trained versus trained
       violation rate. Panel letters and saved outputs not yet assigned.
 
