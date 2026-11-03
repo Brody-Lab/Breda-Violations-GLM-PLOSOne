@@ -22,6 +22,7 @@ NOTEBOOKS = (
     "suppS3.ipynb",
     "suppS4.ipynb",
     "suppS5.ipynb",
+    "suppS6.ipynb",
 )
 
 OUTPUTS = {
@@ -39,8 +40,12 @@ OUTPUTS = {
     },
     "fig03.ipynb": {
         "fig03a_violation_autocorrelation.png",
-        "fig03bc_history_weights.png",
-        "fig03de_tau_summary.png",
+        "fig03b_prev_violation_intuition.png",
+        "fig03b_prev_violation_weights.png",
+        "fig03c_filtered_intuition.png",
+        "fig03c_filtered_weights.png",
+        "fig03d_tau_heatmap.png",
+        "fig03e_example_tau.png",
         "fig03f_model_comparison.png",
     },
     "fig04.ipynb": {
@@ -76,10 +81,12 @@ OUTPUTS = {
         "suppS5a_fixation_stage_violations.png",
         "suppS5b_time_in_fixation_stage.png",
         "suppS5c_time_to_trained.png",
-        "suppS5d_session_progress.png",
-        "suppS5e_session_start.png",
-        "suppS5f_session_end.png",
-        "suppS5g_autocorrelation_robustness.png",
+    },
+    "suppS6.ipynb": {
+        "suppS6a_session_progress.png",
+        "suppS6b_session_start.png",
+        "suppS6c_session_end.png",
+        "suppS6d_autocorrelation_robustness.png",
     },
 }
 

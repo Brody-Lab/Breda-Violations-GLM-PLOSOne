@@ -60,15 +60,20 @@ the manuscript changes they support.
 
 ## Figure 3
 
-- [x] Recompute the autocorrelation null distribution with 10,000 permutations.
-- [x] Use random seed 47 and empirical p-values `(count + 1) / (n + 1)`.
-- [x] Apply Bonferroni correction over lags 1–20 only.
-- [ ] Update panel 3a, its caption, Methods, and Results from the same output.
-      After Bonferroni correction over lags 1–20, 18 lags remain significant;
-      lags 18 and 20 do not.
+- [x] Recompute the autocorrelation null distribution with 10,000 permutations
+      (submitted notebook used 100 shuffles).
+- [x] Use random seed 47, one reusable null array, and empirical p-values
+      `(count + 1) / (n + 1)`.
+- [x] Apply Bonferroni correction over lags 1–20 only (41-lag correction removed).
+- [x] Restore Figure 3 notebook panels to submitted plot styling; Panel A loads
+      `scripts/compute_fig03_autocorrelation.py` output (circle/X significance
+      markers at ±20 lags). GLM panels load `scripts/fit_fig03.py` summaries.
+- [ ] Update panel 3a caption, Methods, and Results from the same output.
+      After Bonferroni correction over lags 1–20, 18 positive lags remain
+      significant (lags 1–17 and 19; lags 18 and 20 do not).
 - [x] Session-edge robustness for Figure 3 autocorrelation: after dropping the
       first and last 10 trials of each session, Bonferroni-significant positive
-      autocorrelation remains at lags 1–5 (lag-1 observed 0.117 → 0.078).
+      autocorrelation remains at lags 1–7 (lag-1 observed 0.117 → 0.078).
       Model-free post-violation effect remains positive in all 16 animals
       (12.1 → 9.9 pp; both p < 1e-7). Submitted Fig 3–5 GLM fits unchanged.
       Artifacts: `fig03_autocorrelation_edges_trimmed/`, `suppS5_history_robustness.json`.

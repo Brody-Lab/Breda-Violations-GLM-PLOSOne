@@ -19,7 +19,8 @@ bottom, and its panel values have been compared with the submitted composite.
       choice E, violation F); hit–violation block in S5. Panel A task timing
       still to be added in Affinity Designer before Overleaf upload.
 - [x] Figure 2 — binary and multinomial GLM schematics
-- [x] Figure 3 — violation history, corrected autocorrelation, and model fits
+- [x] Figure 3 — violation history panels redrawn to submitted styling;
+      corrected autocorrelation via script; GLM fits from stable summaries
 - [x] Figure 4 — post-violation performance and psychometric simulations
 - [x] Figure 5 — model comparisons
 

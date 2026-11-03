@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import math
 
 import numpy as np
 import pandas as pd
@@ -66,6 +67,77 @@ def bits_per_trial(fits: pd.DataFrame, nulls: pd.DataFrame) -> pd.DataFrame:
             )
         outputs.append(group)
     return pd.concat(outputs, ignore_index=True)
+
+
+def _best_fit_rows(
+    fits: pd.DataFrame,
+    base_model_name: str,
+    new_model_name: str,
+) -> list[tuple[float, float]]:
+    """Return per-animal (base_nll, new_nll) for the best test fit of each model."""
+    selected = best_fits(fits, groups=("animal_id", "model_name"))
+    pairs: list[tuple[float, float]] = []
+    for animal_id, group in selected.groupby("animal_id", sort=False):
+        base_rows = group.loc[group["model_name"] == base_model_name]
+        new_rows = group.loc[group["model_name"] == new_model_name]
+        if base_rows.empty or new_rows.empty:
+            continue
+        pairs.append((float(base_rows["nll"].iloc[0]), float(new_rows["nll"].iloc[0])))
+    return pairs
+
+
+def overall_likelihood_ratio(
+    fits: pd.DataFrame,
+    *,
+    base_model_name: str,
+    new_model_name: str,
+) -> dict[str, float]:
+    """Pool log-likelihood improvements across animals (submitted Fig 3 comparison)."""
+    pairs = _best_fit_rows(fits, base_model_name, new_model_name)
+    if not pairs:
+        raise ValueError("No animals have both the base and new model entries.")
+    overall_diff_bits = 0.0
+    for base_nll, new_nll in pairs:
+        diff_bits = (base_nll - new_nll) / np.log(2)
+        overall_diff_bits += diff_bits
+    log10_overall_ratio = overall_diff_bits * math.log10(2)
+    try:
+        overall_ratio = 2**overall_diff_bits
+    except OverflowError:
+        overall_ratio = float("inf")
+    if math.isinf(2**overall_diff_bits):
+        overall_ratio = float("inf")
+    return {
+        "overall_ratio": overall_ratio,
+        "log10_overall_ratio": log10_overall_ratio,
+    }
+
+
+def geometric_mean_likelihood_ratio(
+    fits: pd.DataFrame,
+    *,
+    base_model_name: str,
+    new_model_name: str,
+    threshold_bits: float = 700,
+) -> dict[str, float]:
+    """Geometric mean of per-animal likelihood ratios (submitted Fig 3 comparison)."""
+    pairs = _best_fit_rows(fits, base_model_name, new_model_name)
+    diffs = [base_nll - new_nll for base_nll, new_nll in pairs]
+    if not diffs:
+        raise ValueError("No animals have both the base and new model entries.")
+    mean_diff = float(np.mean(diffs))
+    log10_geometric_mean_ratio = mean_diff / np.log(10)
+    if mean_diff > threshold_bits:
+        geometric_mean_ratio = float("inf")
+    else:
+        try:
+            geometric_mean_ratio = math.exp(mean_diff)
+        except OverflowError:
+            geometric_mean_ratio = float("inf")
+    return {
+        "geometric_mean_ratio": geometric_mean_ratio,
+        "log10_geometric_mean_ratio": log10_geometric_mean_ratio,
+    }
 
 
 def animal_model_deltas(
