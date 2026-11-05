@@ -6,6 +6,7 @@ from violations_glm.transforms import (
     animal_session_progress_violation_rates,
     animal_training_predictors,
     session_position_trials,
+    stimulus_pair_summary,
     trim_session_edges,
 )
 
@@ -99,3 +100,24 @@ def test_trim_session_edges_drops_first_and_last_trials() -> None:
     assert len(trimmed) == 10
     assert trimmed["trial"].min() == 11
     assert trimmed["trial"].max() == 20
+
+
+def test_stimulus_pair_summary_uses_stage_four_and_counts_pairs() -> None:
+    frame = pd.DataFrame(
+        {
+            "animal_id": ["W051"] * 4 + ["W060"] * 2,
+            "training_stage": [3, 4, 4, 4, 4, 4],
+            "s_a": [60.0, 60.0, 60.0, 68.0, 60.0, 76.0],
+            "s_b": [68.0, 68.0, 68.0, 60.0, 68.0, 68.0],
+        }
+    )
+    summary = stimulus_pair_summary(frame)
+    assert summary["animal_id"].tolist() == ["W051", "W051", "W060", "W060"]
+    assert summary.loc[summary["animal_id"] == "W051", "n_stim_pairs"].tolist() == [
+        2,
+        2,
+    ]
+    w051_pair = summary.set_index(["animal_id", "s_a", "s_b"]).loc[
+        ("W051", 60.0, 68.0)
+    ]
+    assert w051_pair["trial_count"] == 2

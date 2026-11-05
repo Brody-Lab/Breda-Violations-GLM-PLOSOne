@@ -278,3 +278,35 @@ def select_example_sessions(
     if missing:
         raise ValueError(f"Missing example sessions for {animal_id}: {missing}")
     return selected.sort_values(["session", "trial"])
+
+
+def stimulus_pair_summary(
+    frame: pd.DataFrame,
+    *,
+    min_training_stage: int = 4,
+) -> pd.DataFrame:
+    """Per-animal stimulus-pair trial counts for stage ≥ 4.
+
+    One row per ``(animal_id, s_a, s_b)`` with trial count and ``n_stim_pairs``
+    for Supporting Figure S2 titles. Animals are ordered alphabetically.
+    """
+    required = {"animal_id", "training_stage", "s_a", "s_b"}
+    missing = sorted(required - set(frame.columns))
+    if missing:
+        raise ValueError(f"stimulus_pair_summary missing columns: {missing}")
+
+    plot_df = frame.loc[frame["training_stage"] >= min_training_stage]
+    summary = (
+        plot_df.groupby(["animal_id", "s_a", "s_b"], as_index=False)
+        .size()
+        .rename(columns={"size": "trial_count"})
+        .sort_values(["animal_id", "s_a", "s_b"])
+        .reset_index(drop=True)
+    )
+    n_pairs = (
+        summary.groupby("animal_id", sort=True)
+        .size()
+        .rename("n_stim_pairs")
+        .reset_index()
+    )
+    return summary.merge(n_pairs, on="animal_id", validate="many_to_one")

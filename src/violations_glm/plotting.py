@@ -86,3 +86,54 @@ def save_figure(
     path = destination / f"{stem}.png"
     figure.savefig(path, dpi=dpi, bbox_inches="tight")
     return path
+
+
+def plot_stim_pairs(
+    animal_summary: pd.DataFrame,
+    ax: Axes | None = None,
+    *,
+    alpha: float = 0.5,
+) -> None:
+    """Scatter one animal's stimulus pairs; marker size encodes trial count."""
+    if ax is None:
+        _, ax = plt.subplots(figsize=(5, 5))
+
+    ax.scatter(
+        animal_summary["s_a"],
+        animal_summary["s_b"],
+        marker=",",
+        s=animal_summary["trial_count"] / 100,
+        alpha=alpha,
+    )
+    animal_id = animal_summary["animal_id"].iloc[0]
+    n_stim_pairs = int(animal_summary["n_stim_pairs"].iloc[0])
+    ax.axline(xy1=(60, 60), slope=1, color="lightgray", linestyle="--")
+    ax.set(
+        xlabel="Stimulus A dB",
+        ylabel="Stimulus B dB",
+        title=f"{animal_id} Stimulus Pairs: N = {n_stim_pairs}",
+    )
+
+
+def plot_stimulus_pairs_by_animal(
+    summary: pd.DataFrame,
+    *,
+    alpha: float = 0.5,
+    n_rows: int = 4,
+    n_cols: int = 4,
+) -> tuple[Figure, Any]:
+    """4×4 grid of stimulus-pair scatters for Supporting Figure S2."""
+    n_animals = summary["animal_id"].nunique()
+    print(f"Number of animals: {n_animals}")
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=(5 * n_cols, 5 * n_rows))
+
+    for index, (_animal_id, animal) in enumerate(summary.groupby("animal_id", sort=True)):
+        row_idx, col_idx = np.unravel_index(index, (n_rows, n_cols))
+        current_ax = axes[row_idx, col_idx] if n_rows > 1 else axes[col_idx]
+        plot_stim_pairs(animal, current_ax, alpha=alpha)
+
+    for ax_idx in range(n_animals, n_rows * n_cols):
+        fig.delaxes(axes.flatten()[ax_idx] if n_rows > 1 else axes[ax_idx])
+
+    plt.tight_layout()
+    return fig, axes
