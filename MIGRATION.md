@@ -15,24 +15,28 @@ bottom, and its panel values have been compared with the submitted composite.
 
 ## Main figures
 
-- [x] Figure 1 — notebook panels B–F done (sequences B; C–F histograms/choice;
-      choice E, violation F); hit–violation block in S5. Panel A task timing
-      still to be added in Affinity Designer before Overleaf upload.
-- [x] Figure 2 — binary and multinomial GLM schematics
-- [x] Figure 3 — violation history panels redrawn to submitted styling;
-      corrected autocorrelation via script; GLM fits from stable summaries
-- [x] Figure 4 — post-violation performance and psychometric simulations
-- [x] Figure 5 — model comparisons
+Fidelity: **complete** = plots and printed stats match the publication source;
+**skeleton** = notebook runs but has not been checked against source. See
+[MIGRATION_FIDELITY.md](MIGRATION_FIDELITY.md).
+
+| Figure | Fidelity | Notes |
+|--------|----------|--------|
+| 1 | partial | Panels B–F; Panel A timing in Designer. Hit–violation in S5. |
+| 2 | complete | Schematics (no historical `@` composite notebook). |
+| 3 | complete | Submitted styling; autocorrelation via script; GLM from summaries. |
+| 4 | skeleton | Needs parity pass vs `@fig4_viol_stim_intrxs_multi.ipynb`. |
+| 5 | skeleton | Needs parity pass vs `@fig5_model_comparisons.ipynb`. |
 
 ## Supporting figures
 
-- [x] S1 — dataset alignment
-- [x] S2 — stimulus pairs by animal
-- [x] S3 — trained-session threshold
-- [x] S4 — exponential-filter schematic
-- [x] S5 / S6 — `suppS5.ipynb` (training history, cited with Fig 1) and
-      `suppS6.ipynb` (within-session structure, cited with Fig 3). The
-      hit–violation regression moved into Figure 1.
+| Supplement | Fidelity | Notes |
+|------------|----------|--------|
+| S1 | skeleton | vs `figS1_new_dataset_alignment.ipynb` |
+| S2 | skeleton | vs `figS2_stimulus_pairs_by_animal.ipynb` |
+| S3 | skeleton | vs `figS3_create_trained_threshold_df.ipynb` (mostly pipeline viz) |
+| S4 | review | Schematic; confirm against filter intuition if needed |
+| S5 | complete | Training history (Fig 1); see revision split from old S5 draft |
+| S6 | complete | Within-session structure (Fig 3); edge-trim autocorrelation |
 - [ ] S5 — superseded note: original single-notebook draft held stage 1
       violation rate, time in stage 1, and time to trained versus trained
       violation rate. Panel letters and saved outputs not yet assigned.

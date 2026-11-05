@@ -1,0 +1,23 @@
+---
+description: Fidelity-first migration from violations-multinomial publication notebooks
+globs: notebooks/**/*.ipynb
+alwaysApply: false
+---
+
+# Figure migration (fidelity)
+
+When porting or fixing a manuscript figure notebook in this repo:
+
+1. Read [MIGRATION_FIDELITY.md](../../MIGRATION_FIDELITY.md) and follow the
+   **migrate-publication-figure** skill (`.cursor/skills/migrate-publication-figure/SKILL.md`).
+2. **Fidelity-only** unless [REVISION.md](../../REVISION.md) or an explicit user request
+   names a change for that figure. Do not redesign plot types, colors, limits, or stats.
+3. **Phase A first:** match source plots and all printed statistics; extra cells are OK.
+   Heavy work belongs in `scripts/` and `src/violations_glm/`; notebooks load and plot.
+4. Point analysis cells at committed scripts (e.g. `scripts/fit_fig04.py`) in markdown.
+5. After edits, run `scripts/verify_cached.py` for that notebook and align
+   `save_figure` stems with `scripts/verify_cached.py`.
+6. Clear notebook outputs before commit.
+
+Source notebooks live under `violations-multinomial/notebooks/publication/`.
+Use the mapping table in MIGRATION_FIDELITY.md for source paths.

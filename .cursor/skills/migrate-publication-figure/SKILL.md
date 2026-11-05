@@ -66,3 +66,6 @@ disable-model-invocation: true
 - Historical plots: `violations-multinomial/notebooks/publication/`
 - Publication repo: this project; notebooks under `notebooks/`
 - Do not invent new analyses for the manuscript figure unless asked.
+- Mapping table, acceptance criteria, and Agent prompt template:
+  [MIGRATION_FIDELITY.md](../../../MIGRATION_FIDELITY.md)
+- Optional source inventory: `uv run python scripts/migration_brief.py <source.ipynb>`
