@@ -116,6 +116,34 @@ def load_alignment_deltas() -> pd.DataFrame:
     return _read_table(results_dir() / "alignment" / "alignment_deltas.csv")
 
 
+def load_alignment_summary() -> pd.DataFrame:
+    """Load the long-form old/new alignment metrics for Supporting Figure S1."""
+    return _read_table(results_dir() / "alignment" / "alignment_summary.csv")
+
+
+def load_alignment_example_sessions() -> pd.DataFrame:
+    """Load Akrami example-animal session rates for Supporting Figure S1 A–B."""
+    return _read_table(results_dir() / "alignment" / "example_animal_sessions.csv")
+
+
+def load_alignment_dataset_comparison() -> pd.DataFrame:
+    """Load old / new_all / new_match_old_viols session-violation aggregates."""
+    return _read_table(results_dir() / "alignment" / "dataset_comparison_stats.csv")
+
+
+def load_alignment_dataset_counts() -> dict:
+    """Load reconstructed new_all trial and session counts for Supporting Figure S1."""
+    source = results_dir() / "alignment" / "dataset_counts.json"
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    return json.loads(source.read_text())
+
+
+def load_alignment_example_curves() -> pd.DataFrame:
+    """Load W089 old/new session hit rates and trial counts for Supporting Figure S1 C–D."""
+    return _read_table(results_dir() / "alignment" / "example_alignment_curves.csv")
+
+
 def load_session_window_summary() -> pd.DataFrame:
     """Load Supporting Figure S5 session-position violation rates."""
     return _read_table(
@@ -265,3 +293,10 @@ def load_rolling_performance() -> pd.DataFrame:
 def load_threshold_sessions() -> pd.DataFrame:
     """Load trained-window crossings for Supporting Figure S3."""
     return _read_table(results_dir() / "data_preparation" / "threshold_sessions.csv")
+
+
+def load_stimulus_pair_summary() -> pd.DataFrame:
+    """Load per-animal stage-≥4 stimulus-pair rates for Supporting Figure S2."""
+    return _read_table(
+        results_dir() / "stimulus_pairs" / "stimulus_pair_summary.parquet"
+    )

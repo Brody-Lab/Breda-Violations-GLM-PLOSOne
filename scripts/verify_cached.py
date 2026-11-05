@@ -61,16 +61,15 @@ OUTPUTS = {
         "fig05c_animal_deltas.png",
     },
     "suppS1.ipynb": {
-        "suppS1ab_example_animals.png",
-        "suppS1c_delta_sessions.png",
-        "suppS1d_delta_trials.png",
-        "suppS1e_delta_violations.png",
-        "suppS1f_delta_stage4_violations.png",
+        "suppS1a_example_animals.png",
+        "suppS1c_hit_alignment.png",
+        "suppS1d_trial_alignment.png",
+        "suppS1e_delta_sessions.png",
+        "suppS1f_delta_trials.png",
+        "suppS1g_delta_violations.png",
     },
     "suppS2.ipynb": {
-        "suppS2a_stimulus_pair_counts.png",
-        "suppS2b_stimulus_pair_hit_rate.png",
-        "suppS2c_stimulus_pair_violation_rate.png",
+        "suppS2_stimulus_pair_counts.png",
     },
     "suppS3.ipynb": {"suppS3_trained_thresholding.png"},
     "suppS4.ipynb": {

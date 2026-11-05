@@ -32,7 +32,10 @@ TEST_SIZE = 0.2
 
 HIT_COLOR = "lime"
 VIOLATION_COLOR = "#e1c63c"
+N_SESSION_COLOR = "gray"
 N_TRIAL_COLOR = "purple"
+NEW_DATASET_COLOR = "C0"  # solid blue in S1 old/new overlays
+OLD_DATASET_COLOR = "C1"  # dashed orange in S1 old/new overlays
 LEFT_COLOR = "salmon"
 RIGHT_COLOR = "cornflowerblue"
 MULTI_CHOICE_PALETTE = (LEFT_COLOR, RIGHT_COLOR, VIOLATION_COLOR)

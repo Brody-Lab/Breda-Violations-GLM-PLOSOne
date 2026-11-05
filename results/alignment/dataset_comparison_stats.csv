@@ -1,0 +1,7 @@
+index,violation,data_type
+mean_violation,0.3221131878468739,old
+std_violation,0.19617601295292575,old
+mean_violation,0.21277690582893988,new_all
+std_violation,0.15810620967436212,new_all
+mean_violation,0.23725032696636603,new_match_old_viols
+std_violation,0.16035774241978953,new_match_old_viols

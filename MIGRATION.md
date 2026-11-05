@@ -31,8 +31,8 @@ Fidelity: **complete** = plots and printed stats match the publication source;
 
 | Supplement | Fidelity | Notes |
 |------------|----------|--------|
-| S1 | skeleton | vs `figS1_new_dataset_alignment.ipynb` |
-| S2 | skeleton | vs `figS2_stimulus_pairs_by_animal.ipynb` |
+| S1 | complete | vs `figS1_new_dataset_alignment.ipynb` + W089 mega-fig C/D; loaders + `prepare_alignment_summary.py`. **TODO:** spot-check panel PNGs on a large screen and confirm all printed stats match the source notebook. |
+| S2 | complete | Submitted scatter grid; stimulus-pair summary via script |
 | S3 | skeleton | vs `figS3_create_trained_threshold_df.ipynb` (mostly pipeline viz) |
 | S4 | review | Schematic; confirm against filter intuition if needed |
 | S5 | complete | Training history (Fig 1); see revision split from old S5 draft |

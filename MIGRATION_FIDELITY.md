@@ -51,8 +51,8 @@ Historical repo root: `violations-multinomial/notebooks/publication/`.
 | Figure 3 | [notebooks/fig03.ipynb](notebooks/fig03.ipynb) | `@fig3_prev_viol.ipynb` | `compute_fig03_autocorrelation.py`, `fit_fig03.py`, `load_autocorrelation_summary`, `load_model_summary` |
 | Figure 4 | [notebooks/fig04.ipynb](notebooks/fig04.ipynb) | `@fig4_viol_stim_intrxs_multi.ipynb` | `fit_fig04.py`, `load_model_summary`, `violations_glm.psychometrics` |
 | Figure 5 | [notebooks/fig05.ipynb](notebooks/fig05.ipynb) | `@fig5_model_comparisons.ipynb` | `fit_fig05.py`, `summaries.bits_per_trial`, likelihood-ratio helpers |
-| S1 | [notebooks/suppS1.ipynb](notebooks/suppS1.ipynb) | `figS1_new_dataset_alignment.ipynb` | `prepare_alignment_summary.py`, `load_alignment_deltas` |
-| S2 | [notebooks/suppS2.ipynb](notebooks/suppS2.ipynb) | `figS2_stimulus_pairs_by_animal.ipynb` | `io` loaders for stimulus-pair summaries |
+| S1 | [notebooks/suppS1.ipynb](notebooks/suppS1.ipynb) | `figS1_new_dataset_alignment.ipynb` | `prepare_alignment_summary.py`, `load_alignment_deltas`, `load_alignment_example_sessions`, `load_alignment_dataset_*` |
+| S2 | [notebooks/suppS2.ipynb](notebooks/suppS2.ipynb) | `figS2_stimulus_pairs_by_animal.ipynb` | `prepare_stimulus_pair_summary.py`, `load_stimulus_pair_summary` |
 | S3 | [notebooks/suppS3.ipynb](notebooks/suppS3.ipynb) | `figS3_create_trained_threshold_df.ipynb` | `prepare_full_pipeline.py`, `prepare_data.py` (notebook mostly visualizes pipeline output) |
 | S4 | [notebooks/suppS4.ipynb](notebooks/suppS4.ipynb) | Schematic (no dedicated `@figS4`; compare Fig 3 intuition / filter demos if needed) | `violations_glm.features.exponential_kernel` |
 | S5 | [notebooks/suppS5.ipynb](notebooks/suppS5.ipynb) | Split from original S5 draft; training-history panels | `prepare_revision_behavior.py`, revision loaders |
