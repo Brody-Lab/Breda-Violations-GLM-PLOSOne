@@ -50,7 +50,11 @@ OUTPUTS = {
     },
     "fig04.ipynb": {
         "fig04a_post_violation_performance.png",
-        "fig04b_interaction_weights.png",
+        "fig04b_prev_violation_intuition.png",
+        "fig04b_stimulus_a_intuition.png",
+        "fig04b_interaction_intuition.png",
+        "fig04b_binary_interaction_weights.png",
+        "fig04b_filtered_interaction_weights.png",
         "fig04c_simulated_psychometrics.png",
         "fig04d_stimulus_sensitivity.png",
         "fig04e_combined_lapse_rate.png",

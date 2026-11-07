@@ -24,7 +24,7 @@ Fidelity: **complete** = plots and printed stats match the publication source;
 | 1 | partial | Panels B–F; Panel A timing in Designer. Hit–violation in S5. |
 | 2 | complete | Schematics (no historical `@` composite notebook). |
 | 3 | complete | Submitted styling; autocorrelation via script; GLM from summaries. |
-| 4 | skeleton | Needs parity pass vs `@fig4_viol_stim_intrxs_multi.ipynb`. |
+| 4 | complete | vs `@fig4_viol_stim_intrxs_multi.ipynb`; Revision 1 C–E labels/δ range; fits via `fit_fig04.py`. |
 | 5 | skeleton | Needs parity pass vs `@fig5_model_comparisons.ipynb`. |
 
 ## Supporting figures

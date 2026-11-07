@@ -10,12 +10,64 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
-from scipy.stats import linregress, pearsonr, spearmanr, ttest_1samp, ttest_rel
+from scipy.stats import (
+    linregress,
+    pearsonr,
+    shapiro,
+    spearmanr,
+    ttest_1samp,
+    ttest_rel,
+    wilcoxon,
+)
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 from violations_glm.features import shift_within_sessions
 from violations_glm.transforms import RELATIVE_DELAY_ORDER, session_position_trials
+
+
+def within_subject_test(
+    frame: pd.DataFrame,
+    *,
+    subject_col: str,
+    condition_col: str,
+    value_col: str,
+    condition_labels: dict[Any, str] | None = None,
+) -> dict[str, Any]:
+    """Paired within-subject test used by Figure 4 hit-rate and psychometric stats.
+
+    Prints descriptives, Shapiro–Wilk on paired differences, then a paired
+    t-test (if differences are normal) or Wilcoxon signed-rank otherwise.
+    """
+    wide = frame.pivot(index=subject_col, columns=condition_col, values=value_col)
+    if condition_labels:
+        wide = wide.rename(columns=condition_labels)
+    conditions = list(wide.columns)
+    if len(conditions) != 2:
+        raise ValueError(
+            f"within_subject_test expects exactly two conditions, got {conditions}"
+        )
+    first, second = conditions
+
+    mean_a, sd_a = wide[first].mean(), wide[first].std()
+    mean_b, sd_b = wide[second].mean(), wide[second].std()
+    n_subjects = len(wide)
+    print(f"{n_subjects} subjects/replicates:")
+    print(f" • {first}: mean = {mean_a:.3f}, SD = {sd_a:.3f}")
+    print(f" • {second}: mean = {mean_b:.3f}, SD = {sd_b:.3f}")
+
+    differences = wide[second] - wide[first]
+    w_stat, p_norm = shapiro(differences)
+    print(f"\nShapiro–Wilk: W = {w_stat:.3f}, p = {p_norm:.3f}")
+
+    if p_norm > 0.05:
+        t_stat, p_value = ttest_rel(wide[second], wide[first])
+        print(f"Paired t-test: t = {t_stat}, p = {p_value}")
+        return {"test": "ttest", "stat": float(t_stat), "p": float(p_value)}
+
+    w_signed, p_signed = wilcoxon(wide[second], wide[first])
+    print(f"Wilcoxon signed-rank: W = {w_signed}, p = {p_signed}")
+    return {"test": "wilcoxon", "stat": float(w_signed), "p": float(p_signed)}
 
 
 def autocorrelation(values: np.ndarray, max_lag: int) -> np.ndarray:
