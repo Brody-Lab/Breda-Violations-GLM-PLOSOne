@@ -300,3 +300,44 @@ def load_stimulus_pair_summary() -> pd.DataFrame:
     return _read_table(
         results_dir() / "stimulus_pairs" / "stimulus_pair_summary.parquet"
     )
+
+
+def load_fig05_animal_deltas() -> pd.DataFrame:
+    """Load per-animal binary bits/trial deltas for Figure 6 panel A / Revision 1."""
+    return _read_table(
+        results_dir() / "fig05_animal_deltas" / "binary_filtered_interaction.csv"
+    )
+
+
+def load_fig05_animal_deltas_summary() -> dict:
+    """Load the Revision 1 cross-animal summary for Figure 6 panel A."""
+    source = results_dir() / "fig05_animal_deltas" / "summary.json"
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    return json.loads(source.read_text())
+
+
+def load_fig06_animal_table() -> pd.DataFrame:
+    """Load the per-animal table behind Figure 6 panels B-D."""
+    return _read_table(results_dir() / "fig06" / "across_animals" / "animal_table.csv")
+
+
+def load_fig06_across_animal_statistics() -> dict:
+    """Load Figure 6 across-animal correlations, leave-one-out ranges and partials."""
+    source = results_dir() / "fig06" / "across_animals" / "correlations.json"
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    return json.loads(source.read_text())
+
+
+def load_fig06_session_split() -> pd.DataFrame:
+    """Load per-animal post-violation drop in low- vs high-violation sessions (Fig 6D)."""
+    return _read_table(results_dir() / "fig06" / "within_animal" / "session_split.csv")
+
+
+def load_fig06_within_animal_statistics() -> dict:
+    """Load Figure 6D paired tests, robustness checks and repeat-violation control."""
+    source = results_dir() / "fig06" / "within_animal" / "statistics.json"
+    if not source.is_file():
+        raise FileNotFoundError(source)
+    return json.loads(source.read_text())

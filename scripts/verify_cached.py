@@ -17,6 +17,7 @@ NOTEBOOKS = (
     "fig03.ipynb",
     "fig04.ipynb",
     "fig05.ipynb",
+    "fig06.ipynb",
     "suppS1.ipynb",
     "suppS2.ipynb",
     "suppS3.ipynb",
@@ -62,7 +63,12 @@ OUTPUTS = {
     "fig05.ipynb": {
         "fig05a_multinomial_comparison.png",
         "fig05b_binary_comparison.png",
-        "fig05c_animal_deltas.png",
+    },
+    "fig06.ipynb": {
+        "fig06a_animal_improvement.png",
+        "fig06b_drop_vs_improvement.png",
+        "fig06c_violation_rate_vs_drop.png",
+        "fig06d_within_animal_split.png",
     },
     "suppS1.ipynb": {
         "suppS1a_example_animals.png",

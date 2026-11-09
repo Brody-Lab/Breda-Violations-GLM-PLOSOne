@@ -25,7 +25,8 @@ Fidelity: **complete** = plots and printed stats match the publication source;
 | 2 | complete | Schematics (no historical `@` composite notebook). |
 | 3 | complete | Submitted styling; autocorrelation via script; GLM from summaries. |
 | 4 | complete | vs `@fig4_viol_stim_intrxs_multi.ipynb`; Revision 1 C–E labels/δ range; fits via `fit_fig04.py`. |
-| 5 | skeleton | Needs parity pass vs `@fig5_model_comparisons.ipynb`. |
+| 5 | complete | vs `@fig5_model_comparisons.ipynb`; panels A–B and LL ratios. |
+| 6 | new (Revision 1) | No submitted counterpart. Variability in the Fig 5B improvement (A–C), within-animal session split (D) and repeat-violation control (text only); `export_fig05_animal_deltas.py`, `prepare_fig06_*.py`. |
 
 ## Supporting figures
 

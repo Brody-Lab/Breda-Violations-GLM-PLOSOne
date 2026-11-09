@@ -58,6 +58,8 @@ def main() -> None:
         "scripts/export_fig05_animal_deltas.py",
         env={"VIOLATIONS_GLM_MODEL_COLLECTION": collection},
     )
+    run("scripts/prepare_fig06_across_animals.py")
+    run("scripts/prepare_fig06_within_animal.py")
     run(
         "scripts/verify_cached.py",
         env={"VIOLATIONS_GLM_MODEL_COLLECTION": collection},

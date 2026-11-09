@@ -100,6 +100,27 @@ the manuscript changes they support.
       The filtered-interaction model improves binary bits/trial for 12 of 16
       animals (mean +0.00050; range −0.0053 in W065 to +0.0049 in W074).
 
+## Figure 6 (new)
+
+- [x] Explain cross-animal variability in the Figure 5B improvement
+      (`prepare_fig06_across_animals.py`). Improvement correlates with the
+      session-averaged post-violation drop in % correct (r = 0.86,
+      p = 2.4e-5) and negatively with trained violation rate (r = −0.76,
+      p = 7.2e-4; Spearman −0.54, p = 0.029); trained hit rate does not
+      (r = 0.35, p = 0.18).
+- [x] Within-animal session split at the median violation rate
+      (`prepare_fig06_within_animal.py`). The post-violation drop is larger in
+      low-violation sessions (4.08 vs 2.95 pp; paired t-test p = 2.2e-4; 15 of
+      16 animals). Post hoc; violation timing within the trial is not recorded.
+- [x] Repeat-violation control (text only; printed in `fig06.ipynb` Panel C).
+      The drop is not significantly related to repeat-violation probability
+      (r = −0.36, p = 0.16); violation rate still predicts the drop controlling
+      for it (partial r = −0.84, p = 4.8e-5), although the two correlate
+      (r = 0.83). The draft Supporting Figure S7 recovery curve was dropped as
+      an indirect test.
+- [ ] Synchronize Results, Methods, and Discussion text with
+      `REVISION1_Breda2026PLOSOne/revision_fig6_variability.md`.
+
 ## Release
 
 - [ ] Replace provisional GitHub and Zenodo references with final URLs/DOI.

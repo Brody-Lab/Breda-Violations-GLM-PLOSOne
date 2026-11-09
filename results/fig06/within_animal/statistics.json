@@ -1,0 +1,71 @@
+{
+  "drop_vs_repeat_probability": {
+    "pearson_p": 0.16459473742473818,
+    "pearson_r": -0.36492572568350723,
+    "spearman_p": 0.1405441773736763,
+    "spearman_rho": -0.3852941176470588
+  },
+  "median_split": {
+    "mean_drop_high_pp": 2.949228710177276,
+    "mean_drop_low_pp": 4.0757774381581955,
+    "mean_low_minus_high_pp": 1.1265487279809188,
+    "n_animals": 16,
+    "n_animals_larger_drop_in_low": 15,
+    "p": 0.0002166120352369498,
+    "stat": -4.839170190415343,
+    "test": "ttest"
+  },
+  "median_split_pooled": {
+    "mean_drop_high_pp": 2.9618285302697314,
+    "mean_drop_low_pp": 3.8030756071531644,
+    "mean_low_minus_high_pp": 0.8412470768834328,
+    "n_animals": 16,
+    "n_animals_larger_drop_in_low": 13,
+    "p": 0.0008043723200825898,
+    "stat": -4.180249163036427,
+    "test": "ttest"
+  },
+  "partial_violation_rate_vs_drop_given_repeat_probability": {
+    "partial_p": 4.8411280646641886e-05,
+    "partial_r": -0.8390819123763069
+  },
+  "split_descriptives": {
+    "mean_baseline_hit_high_pct": 81.13144706900266,
+    "mean_baseline_hit_low_pct": 82.3355917086628,
+    "mean_viol_rate_high_pct": 21.578285031194735,
+    "mean_viol_rate_low_pct": 13.22719135210684,
+    "min_post_violation_trials": 1800
+  },
+  "tertile_split": {
+    "mean_drop_high_pp": 2.8022540773075812,
+    "mean_drop_low_pp": 4.043302120292074,
+    "mean_low_minus_high_pp": 1.2410480429844926,
+    "n_animals": 16,
+    "n_animals_larger_drop_in_low": 14,
+    "p": 0.0033171895539125832,
+    "stat": -3.4860427419919504,
+    "test": "ttest"
+  },
+  "tertile_split_pooled": {
+    "mean_drop_high_pp": 2.864492462602117,
+    "mean_drop_low_pp": 3.7451047008472953,
+    "mean_low_minus_high_pp": 0.8806122382451784,
+    "n_animals": 16,
+    "n_animals_larger_drop_in_low": 12,
+    "p": 0.03919532793800293,
+    "stat": -2.2591143138138774,
+    "test": "ttest"
+  },
+  "violation_rate_vs_drop": {
+    "pearson_p": 0.0011724705733883005,
+    "pearson_r": -0.7352630877286539,
+    "spearman_p": 0.0018627410999474353,
+    "spearman_rho": -0.7147058823529412
+  },
+  "violation_rate_vs_repeat_probability": {
+    "pearson_p": 5.895250921496562e-05,
+    "pearson_r": 0.834161929266306,
+    "spearman_p": 0.00031285391788601143,
+    "spearman_rho": 0.7852941176470588
+  }
+}
