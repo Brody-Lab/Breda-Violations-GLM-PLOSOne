@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import json
 
-import numpy as np
 import pandas as pd
 from scipy import stats
 
@@ -26,6 +25,7 @@ from violations_glm.io import (
 )
 from violations_glm.paths import results_dir
 from violations_glm.psychometrics import simulate_psychometrics
+from violations_glm.stats import partial_correlation
 from violations_glm.summaries import best_fits, bits_per_trial
 
 MULTI = "2025_07_22_fig5_compare_multi_intrxs_rs47"
@@ -128,13 +128,11 @@ def correlate(x: pd.Series, y: pd.Series) -> dict[str, float]:
     }
 
 
-def partial_correlation(frame: pd.DataFrame, x: str, y: str, covariate: str) -> dict[str, float]:
-    def residual(column: str) -> np.ndarray:
-        fit = stats.linregress(frame[covariate], frame[column])
-        return frame[column] - (fit.intercept + fit.slope * frame[covariate])
-
-    r, p = stats.pearsonr(residual(x), residual(y))
-    return {"partial_r": float(r), "p": float(p), "covariate": covariate}
+def partial(frame: pd.DataFrame, x: str, y: str, covariate: str) -> dict[str, float | str]:
+    return {
+        **partial_correlation(frame[x], frame[y], frame[covariate]),
+        "covariate": covariate,
+    }
 
 
 def main() -> None:
@@ -164,19 +162,19 @@ def main() -> None:
         if column != target
     }
     partials = {
-        "delta_vs_viol_rate_given_hit_rate": partial_correlation(
+        "delta_vs_viol_rate_given_hit_rate": partial(
             table, "viol_rate", target, "hit_rate"
         ),
-        "delta_vs_viol_rate_given_baseline_slope": partial_correlation(
+        "delta_vs_viol_rate_given_baseline_slope": partial(
             table, "viol_rate", target, "baseline_slope"
         ),
-        "delta_vs_hit_rate_given_viol_rate": partial_correlation(
+        "delta_vs_hit_rate_given_viol_rate": partial(
             table, "hit_rate", target, "viol_rate"
         ),
-        "delta_vs_viol_rate_given_post_violation_hit_drop": partial_correlation(
+        "delta_vs_viol_rate_given_post_violation_hit_drop": partial(
             table, "viol_rate", target, "post_violation_hit_drop_pp"
         ),
-        "delta_vs_post_violation_hit_drop_given_viol_rate": partial_correlation(
+        "delta_vs_post_violation_hit_drop_given_viol_rate": partial(
             table, "post_violation_hit_drop_pp", target, "viol_rate"
         ),
     }

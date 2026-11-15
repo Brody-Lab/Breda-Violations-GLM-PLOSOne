@@ -19,6 +19,7 @@ from scipy.stats import (
     ttest_rel,
     wilcoxon,
 )
+from scipy.stats import t as student_t
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
@@ -444,3 +445,23 @@ def relative_delay_statistics(
             "p_value": float(matched_test.pvalue),
         },
     }
+
+
+def partial_correlation(
+    x: pd.Series, y: pd.Series, covariate: pd.Series
+) -> dict[str, float]:
+    """Pearson correlation of ``x`` and ``y`` after regressing out ``covariate``.
+
+    The p-value uses n - 3 degrees of freedom (one covariate removed), not the
+    n - 2 that ``pearsonr`` would apply to the residuals.
+    """
+
+    def residual(values: pd.Series) -> pd.Series:
+        fit = linregress(covariate, values)
+        return values - (fit.intercept + fit.slope * covariate)
+
+    r = float(np.corrcoef(residual(x), residual(y))[0, 1])
+    degrees_of_freedom = len(x) - 3
+    t_statistic = r * np.sqrt(degrees_of_freedom / (1 - r**2))
+    p = float(2 * student_t.sf(abs(t_statistic), degrees_of_freedom))
+    return {"partial_r": r, "partial_p": p, "df": degrees_of_freedom}

@@ -467,28 +467,33 @@
   },
   "partial": {
     "delta_vs_viol_rate_given_hit_rate": {
-      "partial_r": -0.713805900241558,
-      "p": 0.0018992005612939898,
+      "partial_r": -0.7138059002415579,
+      "partial_p": 0.0028011999257250013,
+      "df": 13,
       "covariate": "hit_rate"
     },
     "delta_vs_viol_rate_given_baseline_slope": {
-      "partial_r": -0.7053642882639409,
-      "p": 0.002270242785992315,
+      "partial_r": -0.705364288263941,
+      "partial_p": 0.0033078738542530735,
+      "df": 13,
       "covariate": "baseline_slope"
     },
     "delta_vs_hit_rate_given_viol_rate": {
-      "partial_r": 0.04141299327978734,
-      "p": 0.8789670511548007,
+      "partial_r": 0.041412993279787313,
+      "partial_p": 0.8834961668677954,
+      "df": 13,
       "covariate": "viol_rate"
     },
     "delta_vs_viol_rate_given_post_violation_hit_drop": {
-      "partial_r": -0.35866700570805155,
-      "p": 0.17250470152731098,
+      "partial_r": -0.3586670057080516,
+      "partial_p": 0.18925093626136652,
+      "df": 13,
       "covariate": "post_violation_hit_drop_pp"
     },
     "delta_vs_post_violation_hit_drop_given_viol_rate": {
       "partial_r": 0.6765829602148878,
-      "p": 0.003999869255540613,
+      "partial_p": 0.005607619958066607,
+      "df": 13,
       "covariate": "viol_rate"
     }
   }

@@ -26,7 +26,7 @@ from scipy import stats
 from violations_glm.features import previous_violation
 from violations_glm.io import load_hit_violation_animals, load_trials_df
 from violations_glm.paths import results_dir
-from violations_glm.stats import within_subject_test
+from violations_glm.stats import partial_correlation, within_subject_test
 
 HALF_LABELS = {0: "Low-violation sessions", 1: "High-violation sessions"}
 
@@ -149,11 +149,6 @@ def overall_drop(trials: pd.DataFrame) -> pd.Series:
     return ((wide[0] - wide[1]) * 100).groupby("animal_id").mean().rename("drop_pp")
 
 
-def residual(y: pd.Series, covariate: pd.Series) -> pd.Series:
-    fit = stats.linregress(covariate, y)
-    return y - (fit.intercept + fit.slope * covariate)
-
-
 def correlation(x: pd.Series, y: pd.Series) -> dict[str, float]:
     pearson = stats.pearsonr(x, y)
     spearman = stats.spearmanr(x, y)
@@ -163,11 +158,6 @@ def correlation(x: pd.Series, y: pd.Series) -> dict[str, float]:
         "spearman_rho": float(spearman[0]),
         "spearman_p": float(spearman[1]),
     }
-
-
-def partial_correlation(x: pd.Series, y: pd.Series, covariate: pd.Series) -> dict[str, float]:
-    r, p = stats.pearsonr(residual(x, covariate), residual(y, covariate))
-    return {"partial_r": float(r), "partial_p": float(p)}
 
 
 def main() -> None:

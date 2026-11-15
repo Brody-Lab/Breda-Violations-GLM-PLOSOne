@@ -115,9 +115,15 @@ the manuscript changes they support.
 - [x] Repeat-violation control (text only; printed in `fig06.ipynb` Panel C).
       The drop is not significantly related to repeat-violation probability
       (r = −0.36, p = 0.16); violation rate still predicts the drop controlling
-      for it (partial r = −0.84, p = 4.8e-5), although the two correlate
+      for it (partial r = −0.84, p = 9.2e-5), although the two correlate
       (r = 0.83). The draft Supporting Figure S7 recovery curve was dropped as
       an indirect test.
+- [x] Partial correlations now use n − 3 degrees of freedom
+      (`stats.partial_correlation`, shared by both Figure 6 scripts); they
+      previously applied `pearsonr` to residuals (n − 2). Partial r values are
+      unchanged; p-values rise slightly (repeat-violation control
+      4.8e-5 → 9.2e-5; improvement vs violation rate given drop
+      0.17 → 0.19; improvement vs drop given violation rate 0.004 → 0.0056).
 - [ ] Synchronize Results, Methods, and Discussion text with
       `REVISION1_Breda2026PLOSOne/revision_fig6_variability.md`.
 

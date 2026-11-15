@@ -26,8 +26,9 @@
     "test": "ttest"
   },
   "partial_violation_rate_vs_drop_given_repeat_probability": {
-    "partial_p": 4.8411280646641886e-05,
-    "partial_r": -0.8390819123763069
+    "df": 13,
+    "partial_p": 9.207735127359534e-05,
+    "partial_r": -0.839081912376307
   },
   "split_descriptives": {
     "mean_baseline_hit_high_pct": 81.13144706900266,
